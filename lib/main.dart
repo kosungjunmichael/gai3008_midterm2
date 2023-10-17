@@ -21,6 +21,11 @@ class MedicalicHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(
+        bottom: Radius.circular(30),
+      ),
+    ),
         title: Container(
           child: Column(
             children: [
@@ -43,9 +48,10 @@ class MedicalicHome extends StatelessWidget {
                 ),
               ),
               const Text(
-                'Your Health, Our Priority',
+                'Your Health, Our Priority.',
                 style: TextStyle(
                   fontWeight: FontWeight.w100,
+                  color: Colors.grey,
                   fontSize: 12,
                 ),
               ),
@@ -59,25 +65,34 @@ class MedicalicHome extends StatelessWidget {
             height: 72,
             decoration: BoxDecoration(
               border: Border.all(
-                  color: Colors.grey, width: 1.0, style: BorderStyle.solid),
+                  color: Colors.black12, width: 1.0, style: BorderStyle.solid),
               borderRadius: BorderRadius.circular(80),
               color: Colors.transparent,
             ),
             child: const Icon(Icons.search),
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 244, 244, 244),
         shadowColor: Colors.transparent,
         actions: [
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () {},
-            ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.black12, width: 1.0, style: BorderStyle.solid),
+                  borderRadius: BorderRadius.circular(80),
+                  color: Colors.transparent,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8),
+                  child: Image.network(
+                    'https://www.gstatic.com/android/keyboard/emojikitchen/20201001/u1f920/u1f920_u1f921.png',
+                    fit: BoxFit.fitHeight,
+                  ),
+                )),
           ),
         ],
       ),
