@@ -21,11 +21,35 @@ class MedicalicHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          'Medicalic',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
+        title: Container(
+          child: Column(
+            children: [
+              RichText(
+                text: const TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: 'Medi',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 28)),
+                    TextSpan(
+                        text: 'calic',
+                        style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 28)),
+                  ],
+                ),
+              ),
+              const Text(
+                'Your Health, Our Priority',
+                style: TextStyle(
+                  fontWeight: FontWeight.w100,
+                  fontSize: 12,
+                ),
+              ),
+            ],
           ),
         ),
         leading: Padding(
@@ -39,7 +63,7 @@ class MedicalicHome extends StatelessWidget {
               borderRadius: BorderRadius.circular(80),
               color: Colors.transparent,
             ),
-            child: Icon(Icons.search),
+            child: const Icon(Icons.search),
           ),
         ),
         backgroundColor: Colors.white,
@@ -51,7 +75,7 @@ class MedicalicHome extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
             ),
             child: IconButton(
-              icon: Icon(Icons.notifications),
+              icon: const Icon(Icons.notifications),
               onPressed: () {},
             ),
           ),
@@ -71,8 +95,8 @@ class MedicalicHome extends StatelessWidget {
                   _buildIconOption(Icons.note, 'EHR'),
                 ],
               ),
-              SizedBox(height: 20),
-              ListTile(
+              const SizedBox(height: 20),
+              const ListTile(
                 title: Text(
                   'Ruby Melinda Charles',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
@@ -88,8 +112,8 @@ class MedicalicHome extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              ListTile(
+              const SizedBox(height: 20),
+              const ListTile(
                 title: Text(
                   'Glucose Level',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
@@ -97,8 +121,8 @@ class MedicalicHome extends StatelessWidget {
                 subtitle: Text('Empowering You with Healthy Glucose Levels.'),
                 trailing: Text('168,93 mg/dL'),
               ),
-              SizedBox(height: 20),
-              ListTile(
+              const SizedBox(height: 20),
+              const ListTile(
                 title: Text(
                   'Heart Rate',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
@@ -106,8 +130,8 @@ class MedicalicHome extends StatelessWidget {
                 subtitle: Text('Monitoring Hearts, One Beat at a Time.'),
                 trailing: Text('24,32 Bpm'),
               ),
-              Spacer(),
-              Row(
+              const Spacer(),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Icon(Icons.home),
@@ -131,17 +155,17 @@ class MedicalicHome extends StatelessWidget {
             color: Colors.blue,
             borderRadius: BorderRadius.circular(50),
           ),
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Icon(
             icon,
             color: Colors.white,
             size: 24.0,
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
           ),
