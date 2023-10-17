@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: MedicalicHome(),
     );
@@ -22,17 +22,38 @@ class MedicalicHome extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-                    'Medicalic',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                    ),
-                  ),
-        leading: Icon(Icons.search),
+          'Medicalic',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          ),
+        ),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: 72,
+            height: 72,
+            decoration: BoxDecoration(
+              border: Border.all(
+                  color: Colors.grey, width: 1.0, style: BorderStyle.solid),
+              borderRadius: BorderRadius.circular(80),
+              color: Colors.transparent,
+            ),
+            child: Icon(Icons.search),
+          ),
+        ),
+        backgroundColor: Colors.white,
+        shadowColor: Colors.transparent,
         actions: [
-          IconButton(
-            icon: Icon(Icons.notifications),
-            onPressed: () {},
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(50),
+            ),
+            child: IconButton(
+              icon: Icon(Icons.notifications),
+              onPressed: () {},
+            ),
           ),
         ],
       ),
@@ -42,7 +63,6 @@ class MedicalicHome extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
