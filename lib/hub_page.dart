@@ -7,18 +7,22 @@ final List<Map<String, String>> netMap = [
     'sub': '8 accounts',
     'amount': "\$23,000,00",
     'CPO': "99%",
+    'image': 'https://cdn-icons-png.flaticon.com/512/2878/2878574.png',
   },
   {
     'name': 'Savings',
     'sub': 'Savings',
     'amount': "\$128,375",
     'CPO': "<10%",
+    'image':
+        'https://png.pngtree.com/png-vector/20190320/ourlarge/pngtree-vector-vault-icon-png-image_850794.jpg',
   },
   {
     'name': 'Crypto',
     'sub': '2 currencies',
     'amount': "\$28,182",
     'CPO': "50%",
+    'image': 'https://cryptologos.cc/logos/chainlink-link-logo.png',
   },
 ];
 
@@ -40,7 +44,6 @@ class hubExchange extends StatelessWidget {
                     color: Colors.grey,
                     child: Flexible(
                       child: Container(
-                        // decoration: BoxDecoration(color: Colors.black),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
@@ -75,11 +78,11 @@ class hubExchange extends StatelessWidget {
                                         children: <Widget>[
                                           TextButton(
                                             child: const Text('^'),
-                                            onPressed: () {/* ... */},
+                                            onPressed: () {},
                                           ),
                                           TextButton(
                                             child: const Text('v'),
-                                            onPressed: () {/* ... */},
+                                            onPressed: () {},
                                           ),
                                         ],
                                       )
@@ -99,7 +102,6 @@ class hubExchange extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // Text('Total balance: \$10,000'),
                       Column(
                         children: [
                           FloatingActionButton(
@@ -185,8 +187,8 @@ class hubExchange extends StatelessWidget {
               itemBuilder: (context, int index) {
                 return ListTile(
                   leading: CircleAvatar(
-                    backgroundImage:
-                        NetworkImage('https://example.com/image.jpg'),
+                    backgroundImage: NetworkImage(netMap[index]['image']!),
+                    backgroundColor: Colors.white,
                   ),
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
