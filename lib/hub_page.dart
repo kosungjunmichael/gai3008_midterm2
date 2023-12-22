@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'deposit_page.dart';
+import 'transfer_model.dart';
 
 final List<Map<String, String>> netMap = [
   {
@@ -110,14 +110,14 @@ class hubExchange extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => depositFunds()),
+                                    builder: (context) => transferFunds()),
                               );
                             },
-                            tooltip: 'Deposit',
-                            child: Icon(Icons.add),
+                            tooltip: 'Transfer Funds',
+                            child: Icon(Icons.swap_horiz),
                           ),
                           Text(
-                            'Deposit',
+                            'Transfer Funds',
                             style:
                                 TextStyle(color: Colors.white, fontSize: 12.0),
                           ),
@@ -134,11 +134,11 @@ class hubExchange extends StatelessWidget {
                             onPressed: () {
                               // Withdraw funds
                             },
-                            tooltip: 'Withdraw',
-                            child: Icon(Icons.remove),
+                            tooltip: 'Create Account',
+                            child: Icon(Icons.add),
                           ),
                           Text(
-                            'Withdraw',
+                            'Create Account',
                             style:
                                 TextStyle(color: Colors.white, fontSize: 12.0),
                           ),
@@ -155,11 +155,11 @@ class hubExchange extends StatelessWidget {
                             onPressed: () {
                               // Transfer funds
                             },
-                            tooltip: 'Transfer',
-                            child: Icon(Icons.swap_horiz),
+                            tooltip: 'Delete Account',
+                            child: Icon(Icons.remove),
                           ),
                           Text(
-                            'Transfer',
+                            'Delete Account',
                             style:
                                 TextStyle(color: Colors.white, fontSize: 12.0),
                           ),

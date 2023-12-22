@@ -175,8 +175,8 @@ class NumberButton extends StatelessWidget {
   }
 }
 
-class depositFunds extends StatelessWidget {
-  depositFunds({super.key});
+class transferFunds extends StatelessWidget {
+  transferFunds({super.key});
   // text controller
   final TextEditingController _myController = TextEditingController();
 
@@ -186,7 +186,7 @@ class depositFunds extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
         title: Center(
-            child: const Text('Deposit Funds',
+            child: const Text('Transfer Funds',
                 style: TextStyle(color: Colors.black, fontSize: 25.0))),
       ),
       body: Container(

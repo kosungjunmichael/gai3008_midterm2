@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'hub_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -26,9 +34,46 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int currentPageIndex = 0;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final String less = '';
+
+  Future<void> fetchData() async {
+    try {
+      DocumentSnapshot snapshot = await FirebaseFirestore.instance
+          .collection('User')
+          .doc('jzgLfUQOExuMh8DjpSTD')
+          .get();
+
+      if (snapshot.exists) {
+        // Access the 'crypto' field from the document
+        var cryptoValue = snapshot['crypto'];
+        print('Crypto Value: $cryptoValue');
+      } else {
+        print('Document does not exist');
+      }
+    } catch (e) {
+      print('Error fetching data: $e');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
 
   @override
   Widget build(BuildContext context) {
+    CollectionReference reservations = _firestore.collection('User');
+
+    final docRef = reservations.doc();
+    docRef.get().then(
+      (DocumentSnapshot doc) {
+        final data = doc.data() as Map<String, dynamic>;
+        print(data);
+      },
+      onError: (e) => print("Error getting document: $e"),
+    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
